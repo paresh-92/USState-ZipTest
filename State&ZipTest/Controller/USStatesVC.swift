@@ -91,7 +91,10 @@ extension USStatesVC : UITableViewDelegate,UITableViewDataSource
         }
         else
         {
-            
+            let vc = storyboard?.instantiateViewController(withIdentifier: "EditZipCodeVC") as! EditZipCodeVC
+            vc.headerName = lblTop.text ?? ""
+            vc.pin = pinArray[indexPath.row] as! String
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     
     }

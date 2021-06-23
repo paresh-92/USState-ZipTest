@@ -139,6 +139,122 @@
             </objects>
             <point key="canvasLocation" x="760.86956521739137" y="75"/>
         </scene>
+        <!--Edit Zip CodeVC-->
+        <scene sceneID="qRQ-Wr-Y25">
+            <objects>
+                <viewController storyboardIdentifier="EditZipCodeVC" id="iIM-cd-drc" customClass="EditZipCodeVC" customModule="State_ZipTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oIE-Y9-wbP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvV-wS-kpp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvP-uy-ABy">
+                                        <rect key="frame" x="0.0" y="59" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="qJ0-WB-dZG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mW-rO-fhC">
+                                        <rect key="frame" x="5" y="13.666666666666664" width="95" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="&lt;  US States"/>
+                                        <connections>
+                                            <action selector="btnBackClicked:" destination="iIM-cd-drc" eventType="touchUpInside" id="L46-aK-F0x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JvP-uy-ABy" secondAttribute="bottom" id="EUx-Ci-zqu"/>
+                                    <constraint firstItem="3mW-rO-fhC" firstAttribute="centerY" secondItem="qvV-wS-kpp" secondAttribute="centerY" id="R8y-55-Qhe"/>
+                                    <constraint firstItem="3mW-rO-fhC" firstAttribute="leading" secondItem="qvV-wS-kpp" secondAttribute="leading" constant="5" id="YAo-qD-QYQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="JvP-uy-ABy" secondAttribute="trailing" id="Z7N-PW-MBU"/>
+                                    <constraint firstItem="JvP-uy-ABy" firstAttribute="leading" secondItem="qvV-wS-kpp" secondAttribute="leading" id="lxS-oA-Chn"/>
+                                    <constraint firstAttribute="height" constant="60" id="pGg-4W-PkD"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4Sn-Zd-OvD">
+                                <rect key="frame" x="100" y="160.00000000000003" width="214" height="257.66666666666674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Zip Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjp-4P-y2o">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="FWA-a5-6CP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu1-eM-6n7">
+                                        <rect key="frame" x="0.0" y="75" width="214" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vPV-a7-eLZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Zip Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gug-gm-hME">
+                                        <rect key="frame" x="0.0" y="150" width="214" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="L5j-7L-2Lp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnf-YZ-Bas">
+                                        <rect key="frame" x="0.0" y="205" width="214" height="52.666666666666686"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOKClicked:" destination="iIM-cd-drc" eventType="touchUpInside" id="Nif-kT-GaW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Vjp-4P-y2o" firstAttribute="centerX" secondItem="4Sn-Zd-OvD" secondAttribute="centerX" id="7TE-SX-bg6"/>
+                                    <constraint firstItem="cu1-eM-6n7" firstAttribute="top" secondItem="Vjp-4P-y2o" secondAttribute="bottom" constant="25" id="7wR-tR-Rsu"/>
+                                    <constraint firstAttribute="trailing" secondItem="cu1-eM-6n7" secondAttribute="trailing" id="L9j-lR-H7b"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vjp-4P-y2o" secondAttribute="trailing" id="Mgw-pT-AAc"/>
+                                    <constraint firstItem="Vjp-4P-y2o" firstAttribute="leading" secondItem="4Sn-Zd-OvD" secondAttribute="leading" id="NWU-C9-xfN"/>
+                                    <constraint firstAttribute="trailing" secondItem="gug-gm-hME" secondAttribute="trailing" id="OdZ-Th-Sm0"/>
+                                    <constraint firstItem="gug-gm-hME" firstAttribute="top" secondItem="cu1-eM-6n7" secondAttribute="bottom" constant="25" id="RcU-Ng-TcR"/>
+                                    <constraint firstItem="gug-gm-hME" firstAttribute="leading" secondItem="4Sn-Zd-OvD" secondAttribute="leading" id="pT5-Da-BMD"/>
+                                    <constraint firstItem="cu1-eM-6n7" firstAttribute="leading" secondItem="4Sn-Zd-OvD" secondAttribute="leading" id="tPT-rH-KPD"/>
+                                    <constraint firstItem="cu1-eM-6n7" firstAttribute="centerX" secondItem="Vjp-4P-y2o" secondAttribute="centerX" id="ut2-BO-umz"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kpo-u0-4gp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qvV-wS-kpp" firstAttribute="leading" secondItem="Kpo-u0-4gp" secondAttribute="leading" id="3HU-70-a8H"/>
+                            <constraint firstItem="qvV-wS-kpp" firstAttribute="top" secondItem="Kpo-u0-4gp" secondAttribute="top" id="6zf-AM-es3"/>
+                            <constraint firstItem="4Sn-Zd-OvD" firstAttribute="leading" secondItem="Kpo-u0-4gp" secondAttribute="leading" constant="100" id="FH9-Fm-xNG"/>
+                            <constraint firstItem="4Sn-Zd-OvD" firstAttribute="height" secondItem="oIE-Y9-wbP" secondAttribute="height" multiplier="0.35" id="Ncy-wO-XRB"/>
+                            <constraint firstItem="qvV-wS-kpp" firstAttribute="trailing" secondItem="Kpo-u0-4gp" secondAttribute="trailing" id="byo-aX-nUb"/>
+                            <constraint firstItem="4Sn-Zd-OvD" firstAttribute="top" secondItem="qvV-wS-kpp" secondAttribute="bottom" constant="100" id="dQr-ma-C6S"/>
+                            <constraint firstItem="Kpo-u0-4gp" firstAttribute="trailing" secondItem="4Sn-Zd-OvD" secondAttribute="trailing" constant="100" id="yMo-Zi-Ht5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnBack" destination="3mW-rO-fhC" id="PCI-6N-qu9"/>
+                        <outlet property="lblPinCode" destination="cu1-eM-6n7" id="Jes-d3-v78"/>
+                        <outlet property="txtZipCode" destination="gug-gm-hME" id="ipg-ow-dYU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nar-t4-Bxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1403" y="75"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
@@ -149,6 +265,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
