@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  State&ZipTest
-//
-//  Created by Paresh Thakkar on 22/06/21.
-//
 
 import UIKit
 
