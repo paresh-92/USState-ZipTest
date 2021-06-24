@@ -13,9 +13,8 @@ class USStatesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        readPropertyList()
+        readFile()
         btnBack.isHidden = true
-        // Do any additional setup after loading the view.
     }
     @IBAction func btnBackClicked(_ sender: UIButton) {
         didSelect = false
@@ -25,15 +24,29 @@ class USStatesVC: UIViewController {
     }
 }
 extension USStatesVC {
-    func readPropertyList() {
-        if let path = Bundle.main.path(forResource: "statedictionary", ofType: "plist") {
-            if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
-                mainDict = dic
-                for data in mainDict
-                {
-                    statesArray.append(["StateName":data.key,"StatePin":data.value])
-                }
+    func readFile()
+    {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDirectory = paths.object(at: 0) as! NSString
+        let path = documentsDirectory.appendingPathComponent("statedictionary.plist")
+        let fileManager = FileManager.default
+        
+        //check if file exists
+        if !fileManager.fileExists(atPath: path) {
+            
+            guard let bundlePath = Bundle.main.path(forResource: "statedictionary", ofType: "plist") else { return }
+            
+            do {
+                try fileManager.copyItem(atPath: bundlePath, toPath: path)
+            } catch let error as NSError {
+                print("Unable to copy file. ERROR: \(error.localizedDescription)")
             }
+        }
+        let dic = NSDictionary(contentsOfFile: path) as! [String: Any]
+        mainDict = dic
+        for data in mainDict
+        {
+            statesArray.append(["StateName":data.key,"StatePin":data.value])
         }
         
     }

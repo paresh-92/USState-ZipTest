@@ -21,10 +21,10 @@ class EditZipCodeVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnOKClicked(_ sender: UIButton) {
-        let text = txtZipCode.text
-        print(text!)
-        let path = Bundle.main.path(forResource: "statedictionary", ofType: "plist")
-        let dic = NSMutableDictionary(contentsOfFile: path!)!
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDirectory = paths.object(at: 0) as! NSString
+        let path = documentsDirectory.appendingPathComponent("statedictionary.plist")
+        let dic : NSMutableDictionary = NSMutableDictionary(contentsOfFile: path)!
         for data in dic
         {
             var pinArr = data.value as![String]
@@ -35,9 +35,8 @@ class EditZipCodeVC: UIViewController {
                 {
                     pinArr.append(txtZipCode.text!)
                     dic.removeObject(forKey: headerName)
-                    dic[headerName] = pinArr
-                    
-                    dic.write(toFile: path!, atomically: true)
+                    dic.setObject(pinArr, forKey: headerName as NSCopying)
+                    dic.write(toFile: path, atomically: false)
                 }
                 else
                 {
@@ -46,6 +45,7 @@ class EditZipCodeVC: UIViewController {
             }
             
         }
+        
         let vc = storyboard?.instantiateViewController(identifier: "USStatesVC") as! USStatesVC
         self.navigationController?.pushViewController(vc, animated: false)
     }
