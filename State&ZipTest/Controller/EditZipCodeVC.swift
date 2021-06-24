@@ -9,7 +9,6 @@ class EditZipCodeVC: UIViewController {
     
     var headerName = ""
     var pin = String()
-    var addDict : [String:Any] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
