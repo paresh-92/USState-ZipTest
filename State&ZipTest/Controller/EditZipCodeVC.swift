@@ -24,29 +24,39 @@ class EditZipCodeVC: UIViewController {
         let documentsDirectory = paths.object(at: 0) as! NSString
         let path = documentsDirectory.appendingPathComponent("statedictionary.plist")
         let dic : NSMutableDictionary = NSMutableDictionary(contentsOfFile: path)!
+        
+        
         for data in dic
         {
             var pinArr = data.value as![String]
-            if pinArr.contains(lblPinCode.text!)
+            for i in 0..<pinArr.count
             {
-                pinArr.removeAll { $0 == lblPinCode.text! }
-                if txtZipCode.text != ""
+               // if pinArr.contains(lblPinCode.text!)
+                let pin = pinArr[i]
+                if pin == lblPinCode.text!
                 {
-                    pinArr.append(txtZipCode.text!)
-                    dic.removeObject(forKey: headerName)
-                    dic.setObject(pinArr, forKey: headerName as NSCopying)
-                    dic.write(toFile: path, atomically: false)
-                }
-                else
-                {
-                    return
+                    if txtZipCode.text != ""
+                    {
+                        pinArr.remove(at: i)
+                        pinArr.insert(txtZipCode.text!, at: i)
+                        dic.removeObject(forKey: headerName)
+                        dic.setObject(pinArr, forKey: headerName as NSCopying)
+                        dic.write(toFile: path, atomically: false)
+                        let vc = storyboard?.instantiateViewController(identifier: "USStatesVC") as! USStatesVC
+                        self.navigationController?.pushViewController(vc, animated: false)
+                        return
+                    }
+                    else
+                    {
+                        return
+                    }
                 }
             }
             
+            
         }
         
-        let vc = storyboard?.instantiateViewController(identifier: "USStatesVC") as! USStatesVC
-        self.navigationController?.pushViewController(vc, animated: false)
+       
     }
     
 }

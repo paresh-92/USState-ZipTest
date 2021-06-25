@@ -47,7 +47,11 @@ extension USStatesVC {
         for data in mainDict
         {
             statesArray.append(["StateName":data.key,"StatePin":data.value])
+           
         }
+        self.statesArray.sort{
+          (($0 as! Dictionary<String, AnyObject>)["StateName"] as? String ?? "") < (($1 as! Dictionary<String, AnyObject>)["StateName"] as? String ?? "")
+                    }
         
     }
 }
